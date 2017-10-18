@@ -7,11 +7,13 @@ and open the template in the editor.
     Created on : 18 oct. 2017, 22:40:15
     Author     : veronne
 */
-
 #conteneur
 {
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
+    width: 180px;
+    background-color: #5C5869;
 }
 
 .row
@@ -22,5 +24,34 @@ and open the template in the editor.
 
 label
 {
-    background-color: green;
+    background-color: #B7E98E;
+    width: 178px;
+    height: 50px;
+    margin: 3px;
+    border-radius: 7px;
+    text-align: right;
+    margin-top: 8px;
+    font-size: 40px;
+}
+
+button
+{
+    width: 50px;
+    margin: 3px;
+    height: 50px;
+    border-radius: 7px;
+    color: white;
+    font-size: 35px;
+}
+
+.number
+{
+    background-color: #413F4B;
+    border-color: #413F4B;
+}
+
+button:not(.number)
+{
+    background-color: #BCBCC7;
+    border-color: #BCBCC7;
 }
