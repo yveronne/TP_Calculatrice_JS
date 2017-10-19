@@ -10,7 +10,6 @@ var oldNum="";
 var newNum="";
 var operateur ="";
 
-
 function number(nbre){
     var label = document.getElementById("label");
     if(oldNum===""){
