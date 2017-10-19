@@ -14,18 +14,18 @@ var operateur ="";
 function number(nbre){
     var label = document.getElementById("label");
     if(oldNum===""){
-        label.innerHTML = label.textContent + nbre;
+        label.value = label.value + nbre;
     }
     else {
-        label.innerHTML = label.textContent + nbre;
-        newNum = label.innerHTML;
+        label.value = label.value + nbre;
+        newNum = label.value;
     }
     
 }
 
 function calcule(op){
     var label = document.getElementById("label");
-    oldNum = label.innerHTML;
+    oldNum = label.value;
     switch(op){
         case "plus":
             operateur = "+";
@@ -40,13 +40,13 @@ function calcule(op){
             operateur = "/";
             break;
     }
-    label.innerHTML = "";
+    label.value = "";
     
 }
 
 function egale(){
     var label = document.getElementById("label");
-    newNum = label.innerHTML;
+    newNum = label.value;
     oldNum = parseFloat(oldNum);
     newNum = parseFloat(newNum);
     switch(operateur){
@@ -65,6 +65,6 @@ function egale(){
         default: 
             resultat = oldNum;
     }
-    label.innerHTML = resultat;
+    label.value = resultat;
 }
 

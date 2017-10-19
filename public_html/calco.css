@@ -22,7 +22,7 @@ and open the template in the editor.
     flex-direction: row;
 }
 
-label
+#label
 {
     background-color: #B7E98E;
     width: 178px;
