@@ -23,13 +23,25 @@ function number(nbre){
     
 }
 
-function plus(){
+function calcule(op){
     var label = document.getElementById("label");
-    /*operateur = '+';
-    resultat = ParseFloat(label.innerHTML);*/
     oldNum = label.innerHTML;
-    operateur = "+";
+    switch(op){
+        case "plus":
+            operateur = "+";
+            break;
+        case "moins":
+            operateur = "-";
+            break;
+        case "multiplie":
+            operateur = "*";
+            break;
+        case "divise":
+            operateur = "/";
+            break;
+    }
     label.innerHTML = "";
+    
 }
 
 function egale(){
@@ -37,9 +49,22 @@ function egale(){
     newNum = label.innerHTML;
     oldNum = parseFloat(oldNum);
     newNum = parseFloat(newNum);
-    if(operateur === "+"){
-        resultat = oldNum + newNum;
-        label.innerHTML = resultat;
+    switch(operateur){
+        case "+":
+            resultat = oldNum + newNum;
+            break;
+        case "-":
+            resultat = oldNum - newNum;
+            break;
+        case "/":
+            resultat = oldNum / newNum;
+            break;
+        case "*":
+            resultat = oldNum * newNum;
+            break;
+        default: 
+            resultat = oldNum;
     }
+    label.innerHTML = resultat;
 }
 
