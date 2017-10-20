@@ -4,66 +4,28 @@
  * and open the template in the editor.
  */
 
+var resultat="";
+var hasCalculate = false;
 
-var resultat;
-var oldNum="";
-var newNum="";
-var operateur ="";
 
 function number(nbre){
     var label = document.getElementById("label");
-    if(oldNum===""){
-        label.value = label.value + nbre;
+    if(!hasCalculate){
+       label.value = label.value + nbre; 
     }
-    else {
-        label.value = label.value + nbre;
-        newNum = label.value;
-    }
+    
     
 }
 
 function calcule(op){
     var label = document.getElementById("label");
-    oldNum = label.value;
-    switch(op){
-        case "plus":
-            operateur = "+";
-            break;
-        case "moins":
-            operateur = "-";
-            break;
-        case "multiplie":
-            operateur = "*";
-            break;
-        case "divise":
-            operateur = "/";
-            break;
-    }
-    label.value = "";
-    
+    label.value = label.value + op;
+    hasCalculate = false;
 }
 
-function egale(){
+function result(){
     var label = document.getElementById("label");
-    newNum = label.value;
-    oldNum = parseFloat(oldNum);
-    newNum = parseFloat(newNum);
-    switch(operateur){
-        case "+":
-            resultat = oldNum + newNum;
-            break;
-        case "-":
-            resultat = oldNum - newNum;
-            break;
-        case "/":
-            resultat = oldNum / newNum;
-            break;
-        case "*":
-            resultat = oldNum * newNum;
-            break;
-        default: 
-            resultat = oldNum;
-    }
-    label.value = resultat;
+    hasCalculate = true;
+    resultat = label.value;
+    label.value = eval(resultat);
 }
-
