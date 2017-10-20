@@ -18,6 +18,7 @@ for(i=0; i<x.length; i++){
 var label = document.getElementById("label");
     
     label.focus();
+    
     label.onkeydown = function(e){
 
         if(e.keyCode >=96 && e.keyCode <= 111 && e.keyCode !== 108 || e.keyCode === 8){
@@ -26,9 +27,14 @@ var label = document.getElementById("label");
         else if(e.keyCode === 187 || e.keyCode === 13){
             e.preventDefault();
             label.value = eval(label.value);
+            hasCalculate = true;
         }
         else{
             e.preventDefault();
+        }
+        if(hasCalculate && e.keyCode === 8){
+            e.preventDefault();
+            label.value = "";
         }
     };
 };
