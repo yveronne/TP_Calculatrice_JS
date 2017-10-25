@@ -7,7 +7,7 @@ and open the template in the editor.
     Created on : 18 oct. 2017, 22:40:15
     Author     : veronne
 */
-#conteneur
+#container
 {
     display: flex;
     flex-direction: column;
