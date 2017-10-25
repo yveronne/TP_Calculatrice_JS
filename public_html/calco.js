@@ -15,9 +15,12 @@ for(i=0; i<x.length; i++){
     };
 }
 
-var label = document.getElementById("label");
+var label = document.getElementById("screen");
     
     label.focus();
+    /*label.blur(function (event){
+        setTimeout(function(){this.focus();}, 5);
+    });*/
     
     label.onkeydown = function(e){
 
@@ -41,20 +44,20 @@ var label = document.getElementById("label");
 
 
 function number(nbre){
-    var label = document.getElementById("label");
+    var label = document.getElementById("screen");
     if(!hasCalculate){
        label.value = label.value + nbre; 
     }    
 }
 
 function calcule(op){
-    var label = document.getElementById("label");
+    var label = document.getElementById("screen");
     label.value = label.value + op;
     hasCalculate = false;
 }
 
 function result(){
-    var label = document.getElementById("label");
+    var label = document.getElementById("screen");
     hasCalculate = true;
     resultat = label.value;
     label.value = eval(resultat);

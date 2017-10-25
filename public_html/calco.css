@@ -12,9 +12,29 @@ and open the template in the editor.
     display: flex;
     flex-direction: column;
     border-radius: 5px;
-    width: 180px;
-    background-color: #5C5869;
     margin : auto;
+    width: 400px;
+    height: 500px;
+    background-color: #5C5869;
+    
+}
+
+#screen
+{
+    width: 370px;
+    height: 70px;
+    background-color: #B7E98E;
+    margin: 10px 10px 10px 10px;
+    border-radius: 10px;
+    text-align: right;
+    font-size: 50px;
+}
+
+#keyboard
+{   
+    width: 380px;
+    height: 250px;
+    margin: 10px 10px 10px 10px;
 }
 
 .row
@@ -23,24 +43,14 @@ and open the template in the editor.
     flex-direction: row;
 }
 
-#label
-{
-    background-color: #B7E98E;
-    width: 170px;
-    height: 50px;
-    margin: 3px;
-    border-radius: 7px;
-    text-align: right;
-    margin-top: 8px;
-    font-size: 30px;
-}
+
 
 button
 {
-    width: 50px;
+    width: 90px;
     margin: 3px;
-    height: 50px;
-    border-radius: 7px;
+    height: 90px;
+    border-radius: 10px;
     color: white;
     font-size: 35px;
 }
