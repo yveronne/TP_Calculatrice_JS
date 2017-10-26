@@ -8,7 +8,11 @@ var hasCalculate = false;
 
 window.onload = function(){
 var x = document.getElementsByClassName("number");
+alert(document.getElementById("container").offsetHeight);
 
+alert(screen.availHeight);
+document.getElementById("container").style.marginTop = (screen.height -90 - document.getElementById("container").offsetHeight)/2 + "px";
+alert(document.getElementById("container").style.marginBottom);
 for(i=0; i<x.length; i++){
     x[i].onclick = function(){
         number(this.id);
