@@ -7,13 +7,16 @@ var resultat="";
 var hasCalculate = false;
 
 window.onload = function(){
+
 var x = document.getElementsByClassName("number");
 
 document.getElementById("container").style.marginTop = (screen.height -90 - document.getElementById("container").offsetHeight)/2 + "px";
 
 for(i=0; i<x.length; i++){
+
     x[i].onclick = function(){
         number(this.id);
+
     };
 }
 
@@ -29,6 +32,7 @@ var label = document.getElementById("screen");
             ;
         }
         else if(e.keyCode === 187 || e.keyCode === 13){
+
             e.preventDefault();
             try{
                 label.value = eval(label.value);
@@ -36,11 +40,14 @@ var label = document.getElementById("screen");
             catch(err){
                 label.value="Erreur";
             }
+
             hasCalculate = true;
+
         }
         else{
             e.preventDefault();
         }
+
         if(hasCalculate && e.keyCode === 8){
             e.preventDefault();
             label.value = "";
@@ -50,14 +57,18 @@ var label = document.getElementById("screen");
 
 
 function number(nbre){
+
     var label = document.getElementById("screen");
+
     label.focus();
+
     if(!hasCalculate){
        label.value = label.value + nbre; 
     }    
 }
 
 function calcule(op){
+
     var label = document.getElementById("screen");
     label.focus();
     label.value = label.value + op;
@@ -65,10 +76,12 @@ function calcule(op){
 }
 
 function result(){
+
     var label = document.getElementById("screen");
     label.focus();
     hasCalculate = true;
     resultat = label.value;
+
     try{
         label.value = eval(resultat);
     }
@@ -76,7 +89,4 @@ function result(){
         label.value="Erreur";
     }
 }
-
-
-
 
