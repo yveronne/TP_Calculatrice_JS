@@ -25,13 +25,17 @@ var label = document.getElementById("screen");
     });*/
     
     label.onkeydown = function(e){
-
         if(e.keyCode >=96 && e.keyCode <= 111 && e.keyCode !== 108 || e.keyCode === 8){
             ;
         }
         else if(e.keyCode === 187 || e.keyCode === 13){
             e.preventDefault();
-            label.value = eval(label.value);
+            try{
+                label.value = eval(label.value);
+            }
+            catch(err){
+                label.value="Erreur";
+            }
             hasCalculate = true;
         }
         else{
@@ -47,6 +51,7 @@ var label = document.getElementById("screen");
 
 function number(nbre){
     var label = document.getElementById("screen");
+    label.focus();
     if(!hasCalculate){
        label.value = label.value + nbre; 
     }    
@@ -54,15 +59,22 @@ function number(nbre){
 
 function calcule(op){
     var label = document.getElementById("screen");
+    label.focus();
     label.value = label.value + op;
     hasCalculate = false;
 }
 
 function result(){
     var label = document.getElementById("screen");
+    label.focus();
     hasCalculate = true;
     resultat = label.value;
-    label.value = eval(resultat);
+    try{
+        label.value = eval(resultat);
+    }
+    catch(err){
+        label.value="Erreur";
+    }
 }
 
 
